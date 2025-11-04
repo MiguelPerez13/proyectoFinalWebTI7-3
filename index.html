@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Brevo - Crecimiento con CRM y Marketing</title>
+    <style>
+        /* Estilos Generales y Reseteo Básico */
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+            margin: 0;
+            padding: 0;
+            background-color: #ffffff;
+            color: #333;
+        }
+
+        /* Variables de Color (para facilitar cambios) */
+        :root {
+            --color-verde-logo: #38b000;
+            --color-verde-claro: #e6ffe6; /* Fondo de la sección hero */
+            --color-verde-oscuro: #007040; /* Botón CTA y texto secundario */
+            --color-primario: #1a1a1a;
+            --color-secundario: #555555;
+            --color-borde-card: #e0e0e0;
+        }
+
+        /* Header (Logo) */
+        .header {
+            padding: 20px 50px;
+            display: flex;
+            align-items: center;
+        }
+
+        .logo {
+            color: var(--color-verde-logo);
+            font-size: 28px;
+            font-weight: 700;
+        }
+
+        /* Sección Hero (Cabecera) */
+        .hero {
+            background-color: var(--color-verde-claro);
+            padding: 50px 50px 0 50px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            position: relative;
+            /* Forma curvada del fondo a la derecha */
+            clip-path: polygon(0 0, 100% 0, 100% 80%, 75% 100%, 0 100%);
+        }
+
+        .hero-text {
+            max-width: 55%;
+        }
+
+        .hero h1 {
+            font-size: 40px;
+            font-weight: 800;
+            color: var(--color-primario);
+            line-height: 1.1;
+            margin-bottom: 20px;
+        }
+
+        .hero p {
+            font-size: 18px;
+            color: var(--color-secundario);
+            margin-bottom: 30px;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background-color: var(--color-verde-oscuro);
+            color: #ffffff;
+            padding: 15px 30px;
+            text-decoration: none;
+            border-radius: 6px;
+            font-weight: 600;
+            font-size: 16px;
+            transition: background-color 0.3s;
+        }
+
+        .cta-button:hover {
+            background-color: #005a30;
+        }
+
+        .hero-image {
+            max-width: 40%;
+            padding-bottom: 50px;
+        }
+
+        .hero-image img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 8px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Sección de Características */
+        .features-section {
+            padding: 80px 50px;
+            text-align: center;
+        }
+
+        .features-section h2 {
+            font-size: 28px;
+            font-weight: 700;
+            margin-bottom: 50px;
+        }
+
+        .feature-cards {
+            display: flex;
+            justify-content: space-between;
+            gap: 30px;
+        }
+
+        .card {
+            flex: 1;
+            border: 1px solid var(--color-borde-card);
+            border-radius: 8px;
+            padding: 30px;
+            text-align: left;
+            transition: box-shadow 0.3s;
+        }
+
+        .card:hover {
+            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.05);
+        }
+
+        .card-header {
+            border-bottom: 3px solid;
+            padding-bottom: 15px;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        
+        /* Colores de borde y texto para cada tarjeta */
+        .card.marketing .card-header { border-color: #8b008b; color: #8b008b; }
+        .card.ventas .card-header { border-color: #ffa500; color: #ffa500; }
+        .card.conversaciones .card-header { border-color: #ff0000; color: #ff0000; }
+
+        .card-title {
+            font-size: 20px;
+            font-weight: 600;
+            margin: 0;
+        }
+
+        .card-description {
+            font-size: 14px;
+            color: var(--color-secundario);
+            margin-bottom: 20px;
+        }
+
+        .card-features-list {
+            list-style: none;
+            padding: 0;
+            margin-top: 15px;
+        }
+
+        .card-features-list li {
+            font-size: 14px;
+            color: var(--color-secundario);
+            margin-bottom: 8px;
+            position: relative;
+            padding-left: 20px;
+        }
+
+        .card-features-list li::before {
+            content: "•";
+            color: var(--color-verde-oscuro); /* Puedes cambiar este color */
+            font-weight: bold;
+            display: inline-block;
+            width: 1em;
+            margin-left: -1em;
+            position: absolute;
+            left: 0;
+        }
+        
+        /* Iconos (usando Placeholders ya que no tenemos una librería de iconos) */
+        .icon {
+            font-size: 24px;
+        }
+
+        /* Media Queries para Responsividad */
+        @media (max-width: 1024px) {
+            .hero {
+                clip-path: polygon(0 0, 100% 0, 100% 90%, 50% 100%, 0 100%);
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            .hero-text {
+                max-width: 100%;
+                margin-bottom: 40px;
+            }
+
+            .hero h1 {
+                font-size: 32px;
+            }
+
+            .hero-image {
+                max-width: 70%;
+                padding-bottom: 40px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .header, .hero, .features-section {
+                padding: 20px 20px;
+            }
+
+            .hero-image {
+                max-width: 90%;
+            }
+
+            .feature-cards {
+                flex-direction: column;
+            }
+            
+            .features-section h2 {
+                font-size: 24px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header class="header">
+        <div class="logo">Brevo</div>
+    </header>
+
+    <section class="hero">
+        <div class="hero-text">
+            <h1>Brevo: Crezca con nuestra suite de CRM y marketing por correo electrónico</h1>
+            <p>Plataforma todo en uno para gestionar sus relaciones con los clientes a través de correo electrónico, SMS, chat y más</p>
+            <a href="#" class="cta-button">Regístrate gratis</a>
+        </div>
+        <div class="hero-image">
+            <img src="URL_IMAGEN_ILUSTRATIVA" alt="Interfaz de la plataforma Brevo">
+        </div>
+    </section>
+
+    <section class="features-section">
+        <h2>Cinco maneras de trabajar de forma más inteligente, no más dura</h2>
+        
+        <div class="feature-cards">
+            
+            <div class="card marketing">
+                <div class="card-header">
+                    <h3 class="card-title">Plataforma de marketing</h3>
+                    <span class="icon">📧</span> 
+                </div>
+                <p class="card-description">
+                    Aumente las conversiones con campañas multicanal y automatización de marketing.
+                </p>
+                <p><strong>Características principales:</strong></p>
+                <ul class="card-features-list">
+                    <li>Marketing por correo electrónico</li>
+                    <li>Automatización de marketing</li>
+                    <li>Campañas de SMS y WhatsApp</li>
+                </ul>
+            </div>
+
+            <div class="card ventas">
+                <div class="card-header">
+                    <h3 class="card-title">Plataforma de ventas</h3>
+                    <span class="icon">🔻</span> 
+                </div>
+                <p class="card-description">
+                    Administre fácilmente su canal de ventas y acelere el crecimiento de los ingresos en todo el ciclo de ventas.
+                </p>
+                <p><strong>Características principales:</strong></p>
+                <ul class="card-features-list">
+                    <li>Gestión de tuberías</li>
+                    <li>Seguimiento automatizado de transacciones</li>
+                    <li>Reuniones y grabaciones de llamadas</li>
+                </ul>
+            </div>
+
+            <div class="card conversaciones">
+                <div class="card-header">
+                    <h3 class="card-title">Plataforma de conversaciones</h3>
+                    <span class="icon">💬</span> 
+                </div>
+                <p class="card-description">
+                    Ofrezca un excelente servicio al cliente con nuestra solución de comunicación multicanal.
+                </p>
+                <p><strong>Características principales:</strong></p>
+                <ul class="card-features-list">
+                    <li>Charlar</li>
+                    <li>Teléfono</li>
+                    <li>Bandeja de entrada universal</li>
+                </ul>
+            </div>
+
+        </div>
+    </section>
+
+</body>
+</html>
