@@ -16,6 +16,8 @@ body { margin: 0; background: var(--bg); color: #111; }
 .top-actions { display: flex; gap: .5rem; align-items: center; }
 .btn { padding: .45rem .7rem; border: none; background: transparent; cursor: pointer; }
 .btn.primary { background: var(--accent); color: #fff; border-radius: 6px; }
+.btn.editar { color: #10b981; }
+.btn.eliminar { color: #ef4444; }
 
 .container { display: flex; gap: 1rem; padding: 1rem; }
 .sidebar { width: 200px; }
@@ -39,3 +41,8 @@ body { margin: 0; background: var(--bg); color: #111; }
 
 .toast { position: fixed; right: 1rem; bottom: 1rem; background: #111; color:#fff; padding:.6rem .8rem; border-radius:6px; }
 .toast.hidden { display: none; }
+
+.imgProducto {
+    height: 100px;
+    width: auto;    
+}
