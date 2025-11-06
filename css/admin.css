@@ -1,0 +1,48 @@
+/* Estilos base mínimos para el panel de administración */
+:root {
+    --bg: #f7f9fc;
+    --card: #fff;
+    --accent: #2563eb;
+    --muted: #6b7280;
+}
+
+* { box-sizing: border-box; font-family: Inter, Arial, sans-serif; }
+body { margin: 0; background: var(--bg); color: #111; }
+
+.topbar {
+    display: flex; justify-content: space-between; align-items: center;
+    padding: 0.75rem 1rem; background: var(--card); border-bottom: 1px solid #e6edf3;
+}
+.top-actions { display: flex; gap: .5rem; align-items: center; }
+.btn { padding: .45rem .7rem; border: none; background: transparent; cursor: pointer; }
+.btn.primary { background: var(--accent); color: #fff; border-radius: 6px; }
+.btn.editar { color: #10b981; }
+.btn.eliminar { color: #ef4444; }
+
+.container { display: flex; gap: 1rem; padding: 1rem; }
+.sidebar { width: 200px; }
+.sidebar nav ul { list-style: none; padding: 0; margin: 0; }
+.sidebar a { display: block; padding: .5rem; color: var(--muted); text-decoration: none; border-radius: 6px; }
+.sidebar a.active, .sidebar a:hover { background: rgba(37,99,235,0.08); color: var(--accent); }
+
+.main { flex: 1; }
+.card { background: var(--card); padding: 1rem; border-radius: 8px; box-shadow: 0 1px 2px rgba(0,0,0,0.03); }
+.card-header { display:flex; justify-content:space-between; align-items:center; margin-bottom:.5rem; }
+.table { width: 100%; border-collapse: collapse; }
+.table th, .table td { text-align: left; padding: .5rem .6rem; border-bottom: 1px solid #eef2f7; }
+.table th { font-size: .85rem; color: var(--muted); }
+
+.pagination { display:flex; gap:.4rem; padding-top:.5rem; }
+.modal { position: fixed; inset: 0; display: grid; place-items: center; background: rgba(0,0,0,0.35); }
+.modal.hidden { display: none; }
+.modal-content { width: 480px; background: var(--card); padding: 1rem; border-radius: 8px; }
+.form-row { display:flex; flex-direction:column; margin-bottom:.6rem; }
+.form-row input, .form-row select { padding:.5rem; border:1px solid #e6edf3; border-radius:6px; }
+
+.toast { position: fixed; right: 1rem; bottom: 1rem; background: #111; color:#fff; padding:.6rem .8rem; border-radius:6px; }
+.toast.hidden { display: none; }
+
+.imgProducto {
+    height: 100px;
+    width: auto;    
+}
