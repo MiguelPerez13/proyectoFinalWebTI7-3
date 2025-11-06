@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin</title>
+    <link rel="stylesheet" href="../css/admin.css">
+</head>
+<body>
+    <header class="topbar">
+        <h1>Panel de Administración</h1>
+        <div class="top-actions">
+            <input id="search" type="search" placeholder="Buscar..." />
+            <button id="btnNew" class="btn primary">Nuevo</button>
+            <a href="../index.html"><button class="btn">Salir</button></a>
+        </div>
+    </header>
+
+    <div class="container">
+        <aside class="sidebar">
+            <nav>
+                <ul>
+                    <li><a href="#" class="active">Productos</a></li>
+                </ul>
+            </nav>
+        </aside>
+
+        <main class="main">
+            <section class="card">
+                <div class="card-header">
+                    <h2>Lista</h2>
+                    <div class="controls">
+                        <select id="pageSize">
+                            <option value="5">5</option>
+                            <option value="10" selected>10</option>
+                            <option value="25">25</option>
+                        </select>
+                    </div>
+                </div>
+
+                <table id="dataTable" class="table">
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Nombre</th>
+                            <th>Descripcion</th>
+                            <th>Precio</th>
+                            <th>Imagen</th>
+                            <th>Opciones</th>
+                        </tr>
+                    </thead>
+                    <tbody id="tbody">
+                        <!-- filas renderizadas por JS -->
+                    </tbody>
+                </table>
+
+                <div class="pagination" id="pagination">
+                    <!-- controles de paginación renderizados por JS -->
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <!-- Modal formulario (crear / editar) -->
+    <div id="modalForm" class="modal hidden">
+        <div class="modal-content">
+            <header class="modal-header">
+                <h3 id="modalTitle">Nuevo registro</h3>
+            </header>
+            <form id="form">
+                <input type="hidden" id="itemId" />
+                <div class="form-row">
+                    <label for="name">Nombre</label>
+                    <input id="name" name="name" required />
+                </div>
+                <div class="form-row">
+                    <label for="descripcion">Descripcion</label>
+                    <input id="descripcion" name="descripcion" type="text" required />
+                </div>
+                <div class="form-row">
+                    <label for="precio">Precio</label>
+                    <input id="precio" name="precio" type="number" required />
+                </div>
+                <div class="form-row">
+                    <label for="img">Imagen</label>
+                    <input id="img" name="img" type="file" required />
+                </div>
+                <div class="form-actions">
+                    <button type="submit" class="btn primary">Guardar</button>
+                    <button type="button" id="cancel" class="btn">Cancelar</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <div id="toast" class="toast hidden" role="status" aria-live="polite"></div>
+
+    <script src="../js/admin.js" type="module"></script>
+</body>
+</html>
