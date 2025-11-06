@@ -7,6 +7,29 @@
     <link rel="stylesheet" href="../css/admin.css">
 </head>
 <body>
+
+    <div id="loginModal" class="modal">
+        <div class="modal-content">
+            <header class="modal-header">
+                <h3>Iniciar sesión</h3>
+            </header>
+            <form id="loginForm">
+                <div class="form-row">
+                    <label for="loginEmail">Email</label>
+                    <input id="loginEmail" name="loginEmail" type="email" required />
+                </div>
+                <div class="form-row">
+                    <label for="loginPassword">Contraseña</label>
+                    <input id="loginPassword" name="loginPassword" type="password" required />
+                </div>
+                <div class="form-actions">
+                    <button type="submit" class="btn primary" id="loginBtn">Entrar</button>
+                </div>
+                <div id="loginError" style="color: #c00; margin-top: .5rem; display:none;"></div>
+            </form>
+        </div>
+    </div>
+
     <header class="topbar">
         <h1>Panel de Administración</h1>
         <div class="top-actions">

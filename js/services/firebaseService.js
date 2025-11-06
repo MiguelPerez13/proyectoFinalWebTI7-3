@@ -64,5 +64,20 @@ export const databaseService = {
             console.error('Error al obtener productos:', error);
             return { success: false, message: 'Error al obtener los productos' };
         }
-    }
+    },
+
+    async getAllUsers() {
+        try {
+            const snapshot = await get(child(ref(db), 'Users'));
+            if (snapshot.exists()) {
+                return { success: true, data: snapshot.val() };
+            } else {
+                return { success: true, data: {} };
+            }
+        } catch (error) {
+            console.error('Error al obtener usuarios:', error);
+            return { success: false, message: 'Error al obtener usuarios' };
+        }
+    },
+
 };
