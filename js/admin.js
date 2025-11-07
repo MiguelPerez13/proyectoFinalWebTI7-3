@@ -177,8 +177,13 @@ async function cargarProductos() {
             document.getElementById('descripcion').value = producto.descripcion;
             document.getElementById('precio').value = producto.precio;
             imagen = producto.imagen;
-            imagen2 = producto.imagen2
-            imagen3 = producto.imagen3
+            imagen2 = producto.imagen2;
+            imagen3 = producto.imagen3;
+            document.getElementById('url1').value = imagen;
+            document.getElementById('url2').value = imagen2;
+            document.getElementById('url3').value = imagen3;
+
+
         });
 
         eliminarBtn.addEventListener('click', async () => {
@@ -216,7 +221,7 @@ imgInputMain.addEventListener('change', async (e) => {
         const result = await cloudinaryService.uploadImage(file);
         if (result.success) {
             imagen = result.url;
-            
+            document.getElementById('url1').value = imagen;
         }
         alert(result.message);
     }
@@ -228,7 +233,7 @@ imgInput2.addEventListener('change', async (e) => {
         const result = await cloudinaryService.uploadImage(file);
         if (result.success) {
             imagen2 = result.url;
-            
+            document.getElementById('url2').value = imagen2;
         }
         alert(result.message);
     }
@@ -240,7 +245,7 @@ imgInput3.addEventListener('change', async (e) => {
         const result = await cloudinaryService.uploadImage(file);
         if (result.success) {
             imagen3 = result.url;
-            
+            document.getElementById('url3').value = imagen3;
         }
         alert(result.message);
     }
