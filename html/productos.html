@@ -1,19 +1,37 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Productos</title>
-    <link rel="stylesheet" href="">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Productos Xibille</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/css/productos.css">
+  <link rel="icon" type="image/ico" href="/assets/icono.ico">
 </head>
 <body>
-    <nav>
-        <a href="/index.html">Inicio</a>
-        <a href="#">Productos</a>
-    </nav>
-    <h1>Productos Xibille</h1>
 
-    <div id="productos"></div>
-    <script src="/js/productos.js" type="module"></script>
+  <header>
+    <a href="/index.html"><img src="/assets/LogoBlanco.png" alt="Logo Xibillé"></a>
+    <nav>
+      <a href="/index.html">Inicio</a>
+      <a href="#">Productos</a>
+      <a href="/index.html#nosotros">Nosotros</a>
+      <a href="/index.html#ubicacion">Ubicación</a>
+      <a href="/index.html#contacto">Contacto</a>
+    </nav>
+  </header>
+
+  <section class="productos-section">
+    <h1 class="titulo">Nuestros Productos</h1>
+    <div id="productos" class="productos-grid">
+      <!-- Aquí se insertan los productos con JS -->
+    </div>
+  </section>
+
+  <footer>
+    <p>© 2025 Productos Xibille - Todos los derechos reservados</p>
+  </footer>
+
+  <script src="/js/productos.js" type="module"></script>
 </body>
 </html>
