@@ -1,23 +1,34 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Detalle del Producto</title>
-    </head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Detalle del Producto</title>
+  <link rel="stylesheet" href="/css/detalle.css">
+  <link rel="icon" type="image/ico" href="/assets/icono.ico">
+</head>
 <body>
+  <header>
+    <a href="/index.html"><img src="/assets/LogoBlanco.png" alt="Logo Xibillé"></a>
     <nav>
-        <a href="/index.html">Inicio</a>
-        <a href="/html/productos.html">Volver al catálogo</a>
+      <a href="/index.html">Inicio</a>
+      <a href="/html/productos.html">Productos</a>
+      <a href="/index.html#nosotros">Nosotros</a>
+      <a href="/index.html#ubicacion">Ubicación</a>
+      <a href="/index.html#contacto">Contacto</a>
     </nav>
-    <header>
-        <h1>Productos Xibille</h1>
-    </header>
+  </header>
 
-    <div id="detalleProducto">
-        
+  <main class="detalle-section">
+    <div id="detalleProducto" class="detalle-container">
+      <!-- The JS will inject the carousel + product info here -->
     </div>
+  </main>
 
-    <script src="/js/detalle.js" type="module"></script>
+  <footer>
+    <p>© 2025 Productos Xibillé - Todos los derechos reservados</p>
+  </footer>
+
+  <script src="/js/detalle.js" type="module"></script>
 </body>
 </html>
