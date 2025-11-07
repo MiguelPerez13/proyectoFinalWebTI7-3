@@ -11,15 +11,24 @@
 <body>
 
   <header>
-    <a href="/index.html"><img src="/assets/LogoBlanco.png" alt="Logo Xibillé"></a>
-    <nav>
-      <a href="#">Inicio</a>
+  <div class="menu container">
+    <a href="/index.html"><img src="/assets/LogoBlanco.png" alt="Logo Xibillé" class="logo"></a>
+    <input type="checkbox" id="menu-toggle">
+    <label for="menu-toggle" class="menu-icon">
+      <img src="/assets/menu.png" alt="Menú">
+    </label>
+
+    <nav class="navbar">
+      <a href="/index.html">Inicio</a>
       <a href="/html/productos.html">Productos</a>
-      <a href="#nosotros">Nosotros</a>
-      <a href="#ubicacion">Ubicación</a>
-      <a href="#contacto">Contacto</a>
+      <a href="/index.html#nosotros">Nosotros</a>
+      <a href="/index.html#ubicacion">Ubicación</a>
+      <a href="/index.html#contacto">Contacto</a>
+      <a href="/html/comentarios.html">Comentarios</a>
     </nav>
-  </header>
+  </div>
+</header>
+
 
   <section class="hero">
     <div class="hero-content">
@@ -56,6 +65,9 @@
   <section id="contacto" style="background:#eaf6ff;">
     <h2 class="titulo">Contáctanos</h2>
     <p style="text-align:center;">📞 (669) 9411953 | ✉️ contacto@xibille.mx</p>
+    <center><a href="/html/productos.html">Enviar Comentarios</a>   
+    </center>
+
   </section>
 
   <footer>

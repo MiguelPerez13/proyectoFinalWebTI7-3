@@ -11,15 +11,24 @@
 <body>
 
   <header>
-    <a href="/index.html"><img src="/assets/LogoBlanco.png" alt="Logo Xibillé"></a>
-    <nav>
+  <div class="menu container">
+    <a href="/index.html"><img src="/assets/LogoBlanco.png" alt="Logo Xibillé" class="logo"></a>
+    <input type="checkbox" id="menu-toggle">
+    <label for="menu-toggle" class="menu-icon">
+      <img src="/assets/menu.png" alt="Menú">
+    </label>
+
+    <nav class="navbar">
       <a href="/index.html">Inicio</a>
-      <a href="#">Productos</a>
+      <a href="/html/productos.html">Productos</a>
       <a href="/index.html#nosotros">Nosotros</a>
       <a href="/index.html#ubicacion">Ubicación</a>
       <a href="/index.html#contacto">Contacto</a>
+      <a href="/html/comentarios.html">Comentarios</a>
     </nav>
-  </header>
+  </div>
+</header>
+
 
   <section class="productos-section">
     <h1 class="titulo">Nuestros Productos</h1>
