@@ -11,16 +11,25 @@
 <body>
 
   <header>
-    <a href="/index.html"><img src="/assets/LogoBlanco.png" alt="Logo Xibillé"></a>
-    <nav>
-      <a href="#">Inicio</a>
+  <div class="menu container">
+    <a href="/index.html"><img src="/assets/LogoBlanco.png" alt="Logo Xibillé" class="logo"></a>
+
+    <!-- Checkbox que controla el menú -->
+    <input type="checkbox" id="menu-toggle">
+    <label for="menu-toggle" class="menu-icon">
+      <img src="/assets/menu.png" alt="Menú">
+    </label>
+
+    <nav class="navbar">
+      <a href="/index.html">Inicio</a>
       <a href="/html/productos.html">Productos</a>
-      <a href="#nosotros">Nosotros</a>
-      <a href="#ubicacion">Ubicación</a>
-      <a href="#contacto">Contacto</a>
+      <a href="/index.html#nosotros">Nosotros</a>
+      <a href="/index.html#ubicacion">Ubicación</a>
+      <a href="/index.html#contacto">Contacto</a>
     </nav>
-    </div>
-  </header>
+  </div>
+</header>
+
 
   <section class="hero">
     <div class="hero-content">
