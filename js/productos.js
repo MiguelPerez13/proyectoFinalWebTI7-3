@@ -21,11 +21,10 @@ document.addEventListener('DOMContentLoaded', async() =>
                     productoIndividual.innerHTML=`
                         <h3>${producto.nombre}</h3>
                         <img src=${producto.imagen} width="100" >
-                        <p>${producto.precio}</p>
                         <button data-id="${producto.id}">Mas Informacion</button>
-                        <p><strong>Precio: $${producto.precio}</strong></p>
                     `
                     contenedorProductos.appendChild(productoIndividual)
+                    
                 })
 
             //esto lo que hace es que cada boton tiene un id que hace que lo mande por el url para cargar la pagina segun su id
