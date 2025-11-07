@@ -1,4 +1,4 @@
-
+/* BASE */
 * {
   margin: 0;
   padding: 0;
@@ -52,7 +52,6 @@ nav a:hover {
   transform: translateY(-2px);
 }
 
-
 .productos-section {
   flex: 1;
   padding: 80px 10%;
@@ -74,7 +73,6 @@ nav a:hover {
   justify-items: center;
 }
 
-
 .producto {
   background-color: white;
   border-radius: 15px;
@@ -83,7 +81,11 @@ nav a:hover {
   text-align: center;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   width: 100%;
-  max-width: 320px;
+  max-width: 280px;
+  height: 360px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
 .producto:hover {
@@ -93,10 +95,10 @@ nav a:hover {
 
 .producto img {
   width: 100%;
-  max-width: 220px;
-  height: auto;
+  height: 200px;
+  object-fit: contain; 
   border-radius: 12px;
-  margin-bottom: 20px;
+  margin-bottom: 15px;
 }
 
 .producto h3 {
