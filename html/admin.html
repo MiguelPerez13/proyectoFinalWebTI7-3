@@ -89,24 +89,33 @@
         <div class="modal-content">
             <header class="modal-header">
                 <h3 id="modalTitle">Nuevo registro</h3>
+                <p>Campos con * son obligatorios</p>
             </header>
             <form id="form">
                 <input type="hidden" id="itemId" />
                 <div class="form-row">
-                    <label for="name">Nombre</label>
+                    <label for="name">Nombre *</label>
                     <input id="name" name="name" required />
                 </div>
                 <div class="form-row">
-                    <label for="descripcion">Descripcion</label>
+                    <label for="descripcion">Descripcion *</label>
                     <input id="descripcion" name="descripcion" type="text" required />
                 </div>
                 <div class="form-row">
-                    <label for="precio">Precio</label>
+                    <label for="precio">Precio *</label>
                     <input id="precio" name="precio" type="number" required />
                 </div>
                 <div class="form-row">
-                    <label for="img">Imagen</label>
+                    <label for="img">Imagen Principal *</label>
                     <input id="img" name="img" type="file" required />
+                </div>
+                <div class="form-row">
+                    <label for="img2">Imagen 2</label>
+                    <input id="img2" name="img2" type="file" />
+                </div>
+                <div class="form-row">
+                    <label for="img3">Imagen 3</label>
+                    <input id="img3" name="img3" type="file" />
                 </div>
                 <div class="form-actions">
                     <button type="submit" class="btn primary" id="submitBtn">Guardar</button>
