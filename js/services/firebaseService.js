@@ -17,7 +17,7 @@ export const databaseService = {
     // Buscar un producto por número de serie
     async getProduct(id) {
         try {
-            const snapshot = await get(child(ref(db), `Producto/${id}`));
+            const snapshot = await get(child(ref(db), `Productos/${id}`));
             if (snapshot.exists()) {
                 return { success: true, data: snapshot.val() };
             } else {

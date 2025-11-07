@@ -6,7 +6,10 @@ const btnNew = document.getElementById('btnNew');
 const tbody = document.getElementById('tbody');
 const cancelBtn = document.getElementById('cancel');
 const submitBtn = document.getElementById('submitBtn');
-const imgInput = document.getElementById('img');
+const imgInputMain = document.getElementById('img');
+//agrege esto para que se subieran las otras dos imagens opcionales
+const imgInput2 = document.getElementById('img2');
+const imgInput3 = document.getElementById('img3');
 
 const loginModal = document.getElementById('loginModal');
 const loginForm = document.getElementById('loginForm');
@@ -88,6 +91,9 @@ let nombre = '';
 let descripcion = '';
 let precio = 0;
 let imagen = '';
+//esto se agrego para que las 2 urls extras de las imagens se leyeran
+let imagen2 = ''; 
+let imagen3 = '';
 
 const leerIputs = () => {
     id = document.getElementById('itemId').value;
@@ -105,6 +111,8 @@ const limpiarFormulario = () => {
     nombre = '';
     precio = 0;
     imagen = '';
+    imagen2 = ''; 
+    imagen3 = '';
 };
 
 const agregarProducto = async () => {
@@ -121,7 +129,9 @@ const agregarProducto = async () => {
             nombre,
             descripcion,
             precio,
-            imagen
+            imagen,
+            imagen2,
+            imagen3
         };
 
         const result = await firebaseService.databaseService.insertProduct(product);
@@ -167,6 +177,8 @@ async function cargarProductos() {
             document.getElementById('descripcion').value = producto.descripcion;
             document.getElementById('precio').value = producto.precio;
             imagen = producto.imagen;
+            imagen2 = producto.imagen2
+            imagen3 = producto.imagen3
         });
 
         eliminarBtn.addEventListener('click', async () => {
@@ -198,12 +210,36 @@ cancelBtn.addEventListener('click', (e) => {
     cerrarFormulario();
 });
 
-imgInput.addEventListener('change', async (e) => {
+imgInputMain.addEventListener('change', async (e) => {
     const file = e.target.files[0];
     if (file) {
         const result = await cloudinaryService.uploadImage(file);
         if (result.success) {
             imagen = result.url;
+            
+        }
+        alert(result.message);
+    }
+});
+
+imgInput2.addEventListener('change', async (e) => {
+    const file = e.target.files[0];
+    if (file) {
+        const result = await cloudinaryService.uploadImage(file);
+        if (result.success) {
+            imagen2 = result.url;
+            
+        }
+        alert(result.message);
+    }
+});
+
+imgInput3.addEventListener('change', async (e) => {
+    const file = e.target.files[0];
+    if (file) {
+        const result = await cloudinaryService.uploadImage(file);
+        if (result.success) {
+            imagen3 = result.url;
             
         }
         alert(result.message);
