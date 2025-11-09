@@ -31,18 +31,38 @@
   <section class="hero">
     <div class="hero-content">
       <h2>Envianos tus comentarios</h2>
+<center>
+
+
       <div class="comentarios">
         <form action="https://formsubmit.co/2023030512@upsin.edu.mx" method="post">
-        <label for="nombre">Ingrese su nombre: </label>
-        <input type="text" name="nombre" id="nombre" placeholder="Ingrese su nombre" required>
-        <br>
-        <label for="correo">Ingrese su correo electronico</label>
-        <input type="text" name="correo" id="correo" placeholder="Ingrese su email">
-        <br>
-        <textarea name="comentarios" id="comentarios" cols="60" rows="15" placeholder="Escribe aqui tus comentarios"></textarea>
-        <br>
+       
+        <div class="form-row">
+            <label for="nombre">Nombre:</label>
+            <input type="text" name="nombre" id="nombre" required>
+        </div>
+
+        <div class="form-row">
+            <label for="apellido">Apellido:</label>
+            <input type="text" name="apellido" id="apellido"  required>
+        </div>
+            
+        <div class="form-row">
+            <label for="numero">Teléfono:</label>
+            <input type="number" name="numero" id="numero" required>
+        </div>
+        
+        <div class="form-row">
+            <label for="correo">Email:</label>
+            <input type="text" name="correo" id="correo" >
+        
+        </div >
+            <label for="comentarios"><strong>su comentario:</strong></label>
+            <textarea name="comentarios" id="comentarios" cols="100" rows="10"></textarea>
+            
         <button class="btn" type="submit">Enviar</button>
     </form>
+</center>    
       </div>
     </div>
   </section>
