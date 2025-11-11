@@ -159,3 +159,7 @@ footer {
     font-size: 1.6rem;
   }
 }
+
+#descripcionProducto{
+  text-align: justify;
+}
