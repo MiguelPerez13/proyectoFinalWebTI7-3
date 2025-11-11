@@ -150,7 +150,7 @@ nav a:hover {
 
 .hero {
   height: 80vh;
-  background: url('/assets/Ver1.png') center/cover no-repeat;
+  background: url('../assets/Ver1.png') center/cover no-repeat;
   display: flex;
   justify-content: center;
   align-items: center;
