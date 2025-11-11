@@ -107,6 +107,7 @@ const leerIputs = () => {
 
 const limpiarFormulario = () => {
     document.getElementById('form').reset();
+    document.getElementById('itemId').value = '';
     id = 0;
     nombre = '';
     precio = 0;
@@ -203,6 +204,7 @@ async function cargarProductos() {
 
 const cerrarFormulario = () => {
     document.getElementById('modalForm').classList.add('hidden');
+    limpiarFormulario();
 };
 
 btnNew.addEventListener('click', () => {
@@ -254,4 +256,5 @@ imgInput3.addEventListener('change', async (e) => {
 submitBtn.addEventListener('click', async (e) => {
     e.preventDefault();
     await agregarProducto();
+    limpiarFormulario();
 });
