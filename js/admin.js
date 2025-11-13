@@ -91,6 +91,7 @@ let nombre = '';
 let descripcion = '';
 let precio = 0;
 let imagen = '';
+let categoria = '';
 //esto se agrego para que las 2 urls extras de las imagens se leyeran
 let imagen2 = ''; 
 let imagen3 = '';
@@ -103,6 +104,7 @@ const leerIputs = () => {
     nombre = document.getElementById('name').value;
     descripcion = document.getElementById('descripcion').value;
     precio = parseFloat(document.getElementById('precio').value);
+    categoria = document.getElementById('categoria').value
 };
 
 const limpiarFormulario = () => {
@@ -111,14 +113,16 @@ const limpiarFormulario = () => {
     nombre = '';
     precio = 0;
     imagen = '';
+    categoria = '';
     imagen2 = ''; 
     imagen3 = '';
+    
 };
 
 const agregarProducto = async () => {
     leerIputs();
 
-    if (!nombre || isNaN(precio) || !imagen || !descripcion) {
+    if (!nombre || isNaN(precio) || !imagen || !descripcion|| !categoria) {
         alert('Por favor, complete todos los campos correctamente');
         return;
     }
@@ -129,6 +133,7 @@ const agregarProducto = async () => {
             nombre,
             descripcion,
             precio,
+            categoria,
             imagen,
             imagen2,
             imagen3
@@ -160,6 +165,7 @@ async function cargarProductos() {
             <td>${producto.nombre}</td>
             <td>${producto.descripcion}</td>
             <td>${producto.precio}</td>
+            <td>${producto.categoria}</td>
             <td><img src="${producto.imagen}" alt="${producto.nombre}" width="50" class="imgProducto"/></td>
             <td>
                 <button class="btn editar" data-id="${producto.id}">Editar</button>
@@ -176,6 +182,8 @@ async function cargarProductos() {
             document.getElementById('name').value = producto.nombre;
             document.getElementById('descripcion').value = producto.descripcion;
             document.getElementById('precio').value = producto.precio;
+            document.getElementById('categoria').value = producto.categoria
+            categoria = producto.categoria
             imagen = producto.imagen;
             imagen2 = producto.imagen2;
             imagen3 = producto.imagen3;
