@@ -4,27 +4,44 @@ import { Categorias } from './categorias.js';
 
 
 
-function agregarCajasCategorias(){
-    const contenedorProductos = document.getElementById('productos');
+function mostrarProductos(){
+    agregarCajasCategorias()
+    listarProductos()
+}
+
+function agregarCategorias(){
     const selectorCattegorias = document.getElementById('categoria');
     for(let i = 0 ; i < Categorias.length ; i++){
+        console.log(Categorias[i])
         const textoOpcion = (Categorias[i].split("-"))[1];
-
 
         const nuevaOpcion = document.createElement("option");
         nuevaOpcion.innerText = textoOpcion;
         nuevaOpcion.value = Categorias[i];
         selectorCattegorias.appendChild(nuevaOpcion);
 
-        
+    } 
+}
+
+function agregarCajasCategorias(){
+    const contenedorProductos = document.getElementById('productos');
+    const selectorCattegorias = document.getElementById('categoria');
+    contenedorProductos.innerHTML = ";"
+    for(let i = 0 ; i < Categorias.length ; i++){
+        const textoOpcion = (Categorias[i].split("-"))[1];
         
         const cajaPrincipalCategoria = document.createElement("div");
         cajaPrincipalCategoria.className = "cajaCategoria";
-        cajaPrincipalCategoria.id = Categorias[i];
+        cajaPrincipalCategoria.id = "main-"+Categorias[i];
         const tituloCategoria = document.createElement("h2");
         tituloCategoria.innerText = textoOpcion;
-        cajaPrincipalCategoria.appendChild(tituloCategoria)
-        cajaPrincipalCategoria.style.display = "none";
+        cajaPrincipalCategoria.appendChild(tituloCategoria);
+        const cajaProductosCategoria = document.createElement("div");
+        cajaProductosCategoria.className = "CajaProductos"
+        cajaProductosCategoria.id = Categorias[i];
+        cajaPrincipalCategoria.appendChild(cajaProductosCategoria);
+        
+        
         contenedorProductos.appendChild(cajaPrincipalCategoria)
 
     } 
@@ -39,15 +56,16 @@ async function listarProductos(){
     }
     
     let allProducts = res.data
-
-
+    const valorAFiltrar = document.getElementById("categoria").value;
+    let productosTotal = 0;
     for (const id in allProducts) {
-        
         const producto = allProducts[id];
-
+        if(valorAFiltrar != "todas" && valorAFiltrar != producto.categoria){
+            continue;
+        }
         const cajaCategoria = document.getElementById(producto.categoria)
 
-        cajaCategoria.style.display = "block";
+        document.getElementById("main-"+producto.categoria).style.display = "flex";
 
         const productoIndividual=document.createElement('div');
         productoIndividual.classList.add('producto');
@@ -57,12 +75,25 @@ async function listarProductos(){
             <a href="/html/detalle.html?id=${id}">Mas Informacion</a>
             `
         cajaCategoria.appendChild(productoIndividual);
-
+        productosTotal+=1;
+    }
+    if(productosTotal <= 0){
+        const noProductos = document.createElement("h2");
+        noProductos.id = "error";
+        if(valorAFiltrar != "todas"){
+            noProductos.innerText = "No hay productos en esta Categoria";
+        }
+        else{
+            noProductos.innerText = "No hay ningun Producto";
+        }
+        
+        document.getElementById('productos').appendChild(noProductos)
     }
 }
 
+agregarCategorias()
+mostrarProductos()
 
+document.getElementById("filtrar").addEventListener("click" , mostrarProductos)
 
-agregarCajasCategorias()
-listarProductos()
 // listarProductos()

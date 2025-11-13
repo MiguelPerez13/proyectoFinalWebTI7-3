@@ -1,4 +1,243 @@
+
 * {
+  margin: 0;
+  padding: 0;
   box-sizing: border-box;
   font-family: 'Poppins', sans-serif;
+}
+
+
+html, body {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+body {
+  background-color: #f8faf9;
+  color: #1C1C1C;
+  line-height: 1.6;
+}
+
+
+.productos-section {
+  padding: 120px 8% 60px;
+  background-color: #f8faf9;
+  flex: 1;
+}
+
+.titulo {
+  text-align: center;
+  color: #27AE60;
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 40px;
+}
+
+
+.filtro {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
+  margin-bottom: 50px;
+  flex-wrap: wrap;
+}
+
+.filtro label {
+  font-weight: 600;
+  color: #1C1C1C;
+}
+
+.filtro select {
+  padding: 10px 15px;
+  border-radius: 8px;
+  border: 1.5px solid #ccc;
+  font-size: 1rem;
+  background-color: white;
+  cursor: pointer;
+  transition: border 0.3s ease, box-shadow 0.3s ease;
+}
+
+.filtro select:hover {
+  border-color: #27AE60;
+  box-shadow: 0 0 5px rgba(39, 174, 96, 0.3);
+}
+
+.filtro button {
+  background-color: #27AE60;
+  color: white;
+  border: none;
+  padding: 10px 25px;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.filtro button:hover {
+  background-color: #1f8f50;
+  transform: translateY(-2px);
+}
+
+
+.cajaCategoria {
+  display: none; /* JS la mostrará */
+  margin-bottom: 70px;
+  flex-direction: column;
+}
+
+.cajaCategoria h2 {
+  color: #1C1C1C;
+  font-size: 1.6rem;
+  font-weight: 700;
+  margin-bottom: 25px;
+  border-left: 5px solid #27AE60;
+  padding-left: 12px;
+}
+
+
+.cajaCategoria .productos-row {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 30px;
+  justify-items: center;
+}
+
+.CajaProductos{
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 40px; /* space between items */
+  justify-items: stretch;
+}
+
+.producto {
+  background-color: #fff;
+  border-radius: 16px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+  padding: 20px;
+  text-align: center;
+  width: 100%;
+  max-width: 320px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.producto:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+}
+
+.producto h3 {
+  font-size: 1.1rem;
+  margin-bottom: 10px;
+  color: #1C1C1C;
+}
+
+.producto img {
+  width: 100%;
+  max-height: 200px;
+  object-fit: contain;
+  margin: 10px 0 20px;
+  transition: transform 0.3s ease;
+}
+
+.producto:hover img {
+  transform: scale(1.05);
+}
+
+.producto a {
+  display: inline-block;
+  text-decoration: none;
+  background-color: #27AE60;
+  color: white;
+  padding: 8px 20px;
+  border-radius: 20px;
+  font-weight: 600;
+  transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.producto a:hover {
+  background-color: #1f8f50;
+  transform: translateY(-2px);
+}
+
+
+@media (max-width: 900px) {
+  .productos-section {
+    padding: 100px 6% 50px;
+  }
+
+  .cajaCategoria .productos-row {
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  }
+}
+
+@media (max-width: 600px) {
+  .filtro {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .filtro button {
+    width: 100%;
+  }
+
+  .cajaCategoria .productos-row {
+    grid-template-columns: 1fr;
+    gap: 25px;
+  }
+
+  .producto {
+    max-width: 90%;
+  }
+}
+
+
+footer {
+  background-color: #1C1C1C;
+  color: #f8faf9;
+  text-align: center;
+  padding: 40px 20px;
+  margin-top: 80px;
+  border-top: 4px solid #27AE60;
+}
+
+footer p {
+  font-size: 0.95rem;
+  letter-spacing: 0.5px;
+  opacity: 0.9;
+  margin-bottom: 10px;
+}
+
+footer a {
+  color: #27AE60;
+  text-decoration: none;
+  font-weight: 600;
+  transition: color 0.3s ease;
+}
+
+footer a:hover {
+  color: #1f8f50;
+}
+
+/* === ERROR MESSAGE === */
+#error {
+  text-align: center;
+  color: #e74c3c; /* red accent for error */
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin: 60px auto;
+  padding: 15px 25px;
+  width: fit-content;
+  border: 2px solid #e74c3c;
+  border-radius: 12px;
+  background-color: rgba(231, 76, 60, 0.08);
+  box-shadow: 0 4px 10px rgba(231, 76, 60, 0.15);
+  animation: fadeIn 0.6s ease-in-out;
+}
+
+/* === simple animation for appearance === */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-10px); }
+  to { opacity: 1; transform: translateY(0); }
 }
