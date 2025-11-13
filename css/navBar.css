@@ -1,4 +1,4 @@
-/* --- NAVBAR / HEADER STYLES --- */
+
 header {
   position: fixed;
   top: 0;
@@ -95,7 +95,7 @@ nav a:hover {
   transform: scale(1.05);
 }
 
-/* --- RESPONSIVE NAVBAR --- */
+
 @media (max-width: 900px) {
   .navbar {
     position: absolute;
