@@ -1,5 +1,6 @@
 import * as firebaseService from './services/firebaseService.js';
 import { cloudinaryService } from './services/cloudinaryService.js';
+import { Categorias } from './categorias.js';
 
 // Variables DOM
 const btnNew = document.getElementById('btnNew');
@@ -154,6 +155,20 @@ const agregarProducto = async () => {
     }
 };
 
+function agregarCategorias(){
+    const selectorCattegorias = document.getElementById('categoria');
+    for(let i = 0 ; i < Categorias.length ; i++){
+        console.log(Categorias[i])
+        const textoOpcion = (Categorias[i].split("-"))[1];
+
+        const nuevaOpcion = document.createElement("option");
+        nuevaOpcion.innerText = textoOpcion;
+        nuevaOpcion.value = Categorias[i];
+        selectorCattegorias.appendChild(nuevaOpcion);
+
+    } 
+}
+
 async function cargarProductos() {
     let productos = await firebaseService.databaseService.getAllProducts();
     productos = productos.data || {};
@@ -266,3 +281,7 @@ submitBtn.addEventListener('click', async (e) => {
     await agregarProducto();
     limpiarFormulario();
 });
+
+
+
+agregarCategorias()
