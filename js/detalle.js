@@ -31,7 +31,7 @@ document.addEventListener('DOMContentLoaded', async () => {
         contenedorProducto.innerHTML = `
             <h2>${producto.nombre}</h2>
             ${carouselHTML}
-            <p><b>${producto.descripcion}</b</p>
+            <p id="descripcionProducto"><b>${producto.descripcion}</b</p>
             <p><strong>Precio:</strong> $${producto.precio}</p>
         `;
 
