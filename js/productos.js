@@ -26,7 +26,7 @@ function agregarCategorias(){
 function agregarCajasCategorias(){
     const contenedorProductos = document.getElementById('productos');
     const selectorCattegorias = document.getElementById('categoria');
-    contenedorProductos.innerHTML = ";"
+    contenedorProductos.innerHTML = ""
     for(let i = 0 ; i < Categorias.length ; i++){
         const textoOpcion = (Categorias[i].split("-"))[1];
         
