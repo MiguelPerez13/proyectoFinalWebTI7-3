@@ -72,7 +72,7 @@ async function listarProductos(){
         productoIndividual.innerHTML=`
             <h3>${producto.nombre}</h3>
             <img src=${producto.imagen} width="100" >
-            <a href="/html/detalle.html?id=${id}">Mas Informacion</a>
+            <a href="./detalle.html?id=${id}">Mas Informacion</a>
             `
         cajaCategoria.appendChild(productoIndividual);
         productosTotal+=1;
